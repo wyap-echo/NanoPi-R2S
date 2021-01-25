@@ -61,45 +61,17 @@ jobs:
         run: |
           cd code/friendlywrt/package
 
-          git clone https://github.com/rufengsuixing/luci-app-adguardhome
-
-          git clone https://github.com/jerrykuku/lua-maxminddb.git
-          git clone https://github.com/jerrykuku/luci-app-vssr.git
-
           rm -rf lean/luci-theme-argon
           git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
-
-          svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
-          
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/luci-app-passwall
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/tcping
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/ssocks
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-plus
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/trojan-go
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/naiveproxy
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/brook
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/chinadns-ng
-          svn co https://github.com/xiaorouji/openwrt-passwall/trunk/xray
           
           svn co https://github.com/songchenwen/nanopi-r2s/trunk/luci-app-r2sflasher
           
-          svn co https://github.com/pymumu/smartdns/trunk/package/openwrt smartdns
-          cp -r ../../../package/luci-app-smartdns .
-          
           git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
           git clone https://github.com/NateLol/luci-app-oled
-        
-      - name: Install Clash Binaries
-        run: |
-          cd code/friendlywrt/package/base-files/files
-          mkdir -p etc/openclash/core
-          # for updates, go to: https://github.com/Dreamacro/clash/releases
-          wget -qO- https://github.com/Dreamacro/clash/releases/download/v1.3.5/clash-linux-armv8-v1.3.5.gz | gunzip -c > etc/openclash/core/clash
-          # for updates, go to: https://github.com/vernesong/OpenClash/releases/tag/TUN-Premium
-          wget -qO- https://github.com/vernesong/OpenClash/releases/download/TUN-Premium/clash-linux-armv8-2021.01.01.g0ab75c5.gz | gunzip -c > etc/openclash/core/clash_tun
-          # for updates, go to: https://github.com/vernesong/OpenClash/releases/tag/TUN
-          wget -qO- https://github.com/vernesong/OpenClash/releases/download/TUN/clash-linux-armv8.tar.gz | tar xOvz > etc/openclash/core/clash_game
-          chmod +x etc/openclash/core/clash*
+          git clone https://github.com/lisaac/luci-app-dockerman
+          git clone https://github.com/tty228/luci-app-serverchan.git
+          git clone https://github.com/jerrykuku/luci-app-ttnode.git
+          git clone https://github.com/garypang13/luci-app-dnsfilter.git
 
       - name: Update Target.mk
         run: |
