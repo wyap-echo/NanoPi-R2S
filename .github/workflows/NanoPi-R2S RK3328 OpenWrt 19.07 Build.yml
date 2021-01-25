@@ -66,6 +66,7 @@ jobs:
           
           svn co https://github.com/songchenwen/nanopi-r2s/trunk/luci-app-r2sflasher
           
+          git clone https://github.com/fw876/helloworld.git
           git clone https://github.com/jerrykuku/luci-app-jd-dailybonus.git
           git clone https://github.com/NateLol/luci-app-oled
           git clone https://github.com/lisaac/luci-app-dockerman
